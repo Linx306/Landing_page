@@ -1,6 +1,8 @@
-<div class="flex min-h-screen">
+<div class="flex min-h-screen w-full">
   <!-- Contenido principal -->
   <main class="w-3/4 bg-[#2E2B6F] text-white px-10 py-8">
+    <nav class="mb-6 flex gap-3">
+    </nav>
     <div class="flex justify-end mb-4">
       <button class="border border-white px-3 py-1 text-sm mr-2">EN</button>
       <button class="border border-white px-3 py-1 text-sm">ES</button>
@@ -8,64 +10,24 @@
 
     <h2 class="text-3xl font-bold mb-4">Bienvenido a nuestro juego bien cool</h2>
 
-    <div class="border-4 border-yellow-400 inline-block mb-8">
-      <img
-        src="assets/dungeon.png"
-        alt="Dungeon"
-        class="w-full"
-      />
-    </div>
-    <img
-    src="assets/dungeon.png"
-    alt="Dungeon"
-    class="w-full"
-  />
-    <section>
-      <h3 class="text-2xl font-bold mb-4">Personajes</h3>
-      <div class="flex">
-        <div class="border-l-8 border-green-400 mr-4">
-          <img
-            src="assets/forest.png"
-            alt="Forest"
-            class="h-40"
-          />
-        </div>
-        <p class="text-lg leading-relaxed">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-          Nisl tincidunt eget nullam non. Quis hendrerit dolor magna eget est lorem ipsum dolor sit. Volutpat odio facilisis mauris sit amet massa vitae.
-        </p>
-      </div>
-    </section>
+    <router-outlet></router-outlet>
   </main>
-  
+
   <!-- Panel lateral derecho -->
   <aside class="w-1/4 bg-gray-800 text-white flex flex-col items-center py-8 space-y-6">
     <h1 class="text-6xl font-bold">HEY</h1>
     <p class="text-gray-400 text-xl">Logo aquí</p>
 
     <div class="space-y-3 w-3/4">
-      <button class="w-full bg-blue-400 text-black py-2 rounded-lg font-semibold hover:opacity-90">
-        📰 Noticias
-      </button>
-      <button class="w-full bg-green-300 text-black py-2 rounded-lg font-semibold hover:opacity-90">
-        🎮 Juego
-      </button>
-      <button class="w-full bg-orange-300 text-black py-2 rounded-lg font-semibold hover:opacity-90">
-        👥 Equipo
-      </button>
+      <button class="w-full bg-blue-400 text-black py-2 rounded-lg font-semibold hover:opacity-90">📰 Noticias</button>
+      <a routerLink="/galeria" class="w-full block text-center bg-green-300 text-black py-2 rounded-lg font-semibold hover:opacity-90">🎮 Galería</a>
+      <button class="w-full bg-orange-300 text-black py-2 rounded-lg font-semibold hover:opacity-90">👥 Equipo</button>
     </div>
 
     <div class="mt-10 w-3/4 space-y-2">
-      <button class="w-full border border-gray-500 py-2 rounded-lg flex items-center justify-center gap-2">
-        ✉️ Notifícate por correo
-      </button>
-      <button class="w-full border border-gray-500 py-2 rounded-lg flex items-center justify-center gap-2">
-        💬 Únete al Discord
-      </button>
-      <button class="w-full border border-gray-500 py-2 rounded-lg flex items-center justify-center gap-2">
-        🖼️ Fondos de pantalla
-      </button>
+      <button class="w-full border border-gray-500 py-2 rounded-lg flex items-center justify-center gap-2">✉️ Notifícate por correo</button>
+      <button class="w-full border border-gray-500 py-2 rounded-lg flex items-center justify-center gap-2">💬 Únete al Discord</button>
+      <button class="w-full border border-gray-500 py-2 rounded-lg flex items-center justify-center gap-2">🖼️ Fondos de pantalla</button>
     </div>
   </aside>
-
 </div>
