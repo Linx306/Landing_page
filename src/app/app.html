@@ -1,6 +1,21 @@
-<div class="flex min-h-screen w-full">
+<div class="flex min-h-screen w-full flex-col md:flex-row">
+  <!-- Navbar móvil -->
+  <header class="md:hidden bg-gray-900 text-white sticky top-0 z-20">
+    <div class="flex items-center justify-between px-4 py-3">
+      <div class="flex items-center gap-2">
+        <span class="text-2xl font-extrabold tracking-wide">HEY</span>
+      </div>
+      <button (click)="toggleMobileMenu()" aria-label="Abrir menú" [attr.aria-expanded]="isMobileMenuOpen()" class="p-2 rounded-md border border-white/20">
+        <span class="block w-6 h-0.5 bg-white mb-1"></span>
+        <span class="block w-6 h-0.5 bg-white mb-1"></span>
+        <span class="block w-6 h-0.5 bg-white"></span>
+      </button>
+    </div>
+    <!-- Overlay (móvil) -->
+    <div class="md:hidden fixed inset-0 bg-black/50 z-10" [class.hidden]="!isMobileMenuOpen()" (click)="toggleMobileMenu()"></div>
+  </header>
   <!-- Contenido principal -->
-  <main class="w-3/4 bg-[#2E2B6F] text-white px-10 py-8">
+  <main class="w-full md:w-3/4 bg-[#2E2B6F] text-white px-4 sm:px-6 md:px-10 py-8 max-w-[1920px] mx-auto">
     <nav class="mb-6 flex gap-3">
     </nav>
     <div class="flex justify-end mb-4">
@@ -8,26 +23,26 @@
       <button class="border border-white px-3 py-1 text-sm">ES</button>
     </div>
 
-    <h2 class="text-3xl font-bold mb-4">Bienvenido a nuestro juego bien cool</h2>
+    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">Bienvenido a nuestro juego bien cool</h2>
 
     <router-outlet></router-outlet>
   </main>
 
-  <!-- Panel lateral derecho -->
-  <aside class="w-1/4 bg-gray-800 text-white flex flex-col items-center py-8 space-y-6">
-    <h1 class="text-6xl font-bold">HEY</h1>
-    <p class="text-gray-400 text-xl">Logo aquí</p>
+  <!-- Panel lateral derecho (siempre presente). En móvil es off-canvas controlado por la navbar -->
+  <aside [class.translate-x-0]="isMobileMenuOpen()" [class.translate-x-full]="!isMobileMenuOpen()" class="bg-gray-800 text-white flex flex-col items-center py-8 space-y-6 px-4 md:px-6 z-30 fixed inset-y-0 right-0 w-80 max-w-[85vw] transform transition-transform duration-300 md:static md:w-1/4 md:translate-x-0 md:transform-none">
+    <h1 class="text-4xl md:text-6xl font-bold">HEY</h1>
+    <p class="text-gray-400 text-lg md:text-xl">Logo aquí</p>
 
-    <div class="space-y-3 w-3/4">
-      <button class="w-full bg-blue-400 text-black py-2 rounded-lg font-semibold hover:opacity-90">📰 Noticias</button>
-      <a routerLink="/galeria" class="w-full block text-center bg-green-300 text-black py-2 rounded-lg font-semibold hover:opacity-90">🎮 Galería</a>
-      <button class="w-full bg-orange-300 text-black py-2 rounded-lg font-semibold hover:opacity-90">👥 Equipo</button>
+    <div class="space-y-3 w-full max-w-sm md:w-3/4">
+      <button (click)="isMobileMenuOpen() && toggleMobileMenu()" class="w-full bg-blue-400 text-black py-2 rounded-lg font-semibold hover:opacity-90">📰 Noticias</button>
+      <a routerLink="/galeria" (click)="isMobileMenuOpen() && toggleMobileMenu()" class="w-full block text-center bg-green-300 text-black py-2 rounded-lg font-semibold hover:opacity-90">🎮 Galería</a>
+      <button (click)="isMobileMenuOpen() && toggleMobileMenu()" class="w-full bg-orange-300 text-black py-2 rounded-lg font-semibold hover:opacity-90">👥 Equipo</button>
     </div>
 
-    <div class="mt-10 w-3/4 space-y-2">
-      <button class="w-full border border-gray-500 py-2 rounded-lg flex items-center justify-center gap-2">✉️ Notifícate por correo</button>
-      <button class="w-full border border-gray-500 py-2 rounded-lg flex items-center justify-center gap-2">💬 Únete al Discord</button>
-      <button class="w-full border border-gray-500 py-2 rounded-lg flex items-center justify-center gap-2">🖼️ Fondos de pantalla</button>
+    <div class="mt-10 w-full max-w-sm md:w-3/4 space-y-2">
+      <button (click)="isMobileMenuOpen() && toggleMobileMenu()" class="w-full border border-gray-500 py-2 rounded-lg flex items-center justify-center gap-2">✉️ Notifícate por correo</button>
+      <button (click)="isMobileMenuOpen() && toggleMobileMenu()" class="w-full border border-gray-500 py-2 rounded-lg flex items-center justify-center gap-2">💬 Únete al Discord</button>
+      <button (click)="isMobileMenuOpen() && toggleMobileMenu()" class="w-full border border-gray-500 py-2 rounded-lg flex items-center justify-center gap-2">🖼️ Fondos de pantalla</button>
     </div>
   </aside>
 </div>
