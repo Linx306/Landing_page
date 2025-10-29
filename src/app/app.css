@@ -1,0 +1,15 @@
+/* Forzar que el aside se muestre en escritorio y se oculte en móvil */
+.desktop-aside {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .desktop-aside {
+    display: flex;
+    width: 20%;
+    position: sticky;
+    top: 0;
+    height: 100vh; /* h-screen */
+  }
+}
+
