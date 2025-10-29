@@ -9,4 +9,13 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 })
 export class App {
   protected readonly title = signal('LandingPage');
+  protected readonly isMobileNavOpen = signal(false);
+
+  protected toggleMobileNav(): void {
+    this.isMobileNavOpen.update((open) => !open);
+  }
+
+  protected closeMobileNav(): void {
+    this.isMobileNavOpen.set(false);
+  }
 }
