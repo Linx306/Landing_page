@@ -16,62 +16,12 @@
   <section class="mb-16">
     <h2 class="text-3xl font-bold mb-8 text-center">📸 Capturas del Juego</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-      <div class="group relative overflow-hidden rounded-xl border-2 border-yellow-400 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-        <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=500&h=300&fit=crop" alt="Mundo Mágico" class="block w-full h-48 sm:h-56 md:h-64 object-cover">
+      <div *ngFor="let item of galeria$ | async" class="group relative overflow-hidden rounded-xl border-2 border-yellow-400 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+        <img [src]="item.Imagen" [alt]="item.nombre" class="block w-full h-48 sm:h-56 md:h-64 object-cover">
         <div class="overlay absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-6">
           <div class="text-center">
-            <h3 class="text-white text-xl font-bold mb-2">Mundo Mágico</h3>
-            <p class="text-gray-300">Explora este hermoso mundo lleno de magia y misterio</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="group relative overflow-hidden rounded-xl border-2 border-green-400 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=500&h=300&fit=crop" alt="Bosque Encantado" class="block w-full h-48 sm:h-56 md:h-64 object-cover">
-        <div class="overlay absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-6">
-          <div class="text-center">
-            <h3 class="text-white text-xl font-bold mb-2">Bosque Encantado</h3>
-            <p class="text-gray-300">Un bosque místico donde habitan criaturas fantásticas</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="group relative overflow-hidden rounded-xl border-2 border-blue-400 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-        <img src="https://images.unsplash.com/photo-1556438064-2d7646166914?w=500&h=300&fit=crop" alt="Ciudad Futurista" class="block w-full h-48 sm:h-56 md:h-64 object-cover">
-        <div class="overlay absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-6">
-          <div class="text-center">
-            <h3 class="text-white text-xl font-bold mb-2">Ciudad Futurista</h3>
-            <p class="text-gray-300">Una metrópolis tecnológica del futuro</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="group relative overflow-hidden rounded-xl border-2 border-purple-400 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=500&h=300&fit=crop" alt="Montañas Heladas" class="block w-full h-48 sm:h-56 md:h-64 object-cover">
-        <div class="overlay absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-6">
-          <div class="text-center">
-            <h3 class="text-white text-xl font-bold mb-2">Montañas Heladas</h3>
-            <p class="text-gray-300">Picos nevados que desafían a los más valientes</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="group relative overflow-hidden rounded-xl border-2 border-red-400 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-        <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=500&h=300&fit=crop" alt="Desierto Ardiente" class="block w-full h-48 sm:h-56 md:h-64 object-cover">
-        <div class="overlay absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-6">
-          <div class="text-center">
-            <h3 class="text-white text-xl font-bold mb-2">Desierto Ardiente</h3>
-            <p class="text-gray-300">Un vasto desierto lleno de secretos ocultos</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="group relative overflow-hidden rounded-xl border-2 border-pink-400 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-        <img src="https://images.unsplash.com/photo-1556438064-2d7646166914?w=500&h=300&fit=crop" alt="Océano Profundo" class="block w-full h-48 sm:h-56 md:h-64 object-cover">
-        <div class="overlay absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-6">
-          <div class="text-center">
-            <h3 class="text-white text-xl font-bold mb-2">Océano Profundo</h3>
-            <p class="text-gray-300">Las profundidades del mar guardan tesoros legendarios</p>
+            <h3 class="text-white text-xl font-bold mb-2">{{ item.nombre }}</h3>
+            <p class="text-gray-300">{{ item.Contenido }}</p>
           </div>
         </div>
       </div>
@@ -82,31 +32,11 @@
   <section class="mb-16 px-4 md:px-0">
     <h2 class="text-3xl font-bold mb-8 text-center">👥 Personajes</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 text-center hover:bg-white/20 transition-all duration-300">
+      <div *ngFor="let item of personajes$ | async" class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 text-center hover:bg-white/20 transition-all duration-300">
         <div class="text-5xl sm:text-6xl mb-4">⚔️</div>
-        <h3 class="text-xl font-bold mb-2">Guerrero</h3>
-        <p class="text-gray-300 text-sm">Un valiente luchador con gran fuerza y resistencia</p>
-      </div>
-      
-      <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 text-center hover:bg-white/20 transition-all duration-300">
-        <div class="text-5xl sm:text-6xl mb-4">🧙‍♂️</div>
-        <h3 class="text-xl font-bold mb-2">Mago</h3>
-        <p class="text-gray-300 text-sm">Maestro de las artes arcanas y la magia elemental</p>
-      </div>
-      
-      <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 text-center hover:bg-white/20 transition-all duration-300">
-        <div class="text-5xl sm:text-6xl mb-4">🏹</div>
-        <h3 class="text-xl font-bold mb-2">Arquero</h3>
-        <p class="text-gray-300 text-sm">Hábil con el arco y la flecha, rápido y preciso</p>
-      </div>
-      
-      <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 text-center hover:bg-white/20 transition-all duration-300">
-        <div class="text-5xl sm:text-6xl mb-4">🛡️</div>
-        <h3 class="text-xl font-bold mb-2">Paladín</h3>
-        <p class="text-gray-300 text-sm">Protector sagrado con poderes de curación</p>
+        <h3 class="text-xl font-bold mb-2">{{item.Nombre}}</h3>
+        <p class="text-gray-300 text-sm">{{item.Descripcion}}</p>
       </div>
     </div>
   </section>
 </div>
-
-
