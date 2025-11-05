@@ -27,7 +27,13 @@
     </div>
 
     <div class="mt-10 w-11/12 sm:w-3/4 space-y-2">
-      <button class="w-full border border-gray-500 py-2 rounded-lg flex items-center justify-center gap-2 text-sm sm:text-base">✉️ Notifícate por correo</button>
+      <button class="w-full border border-gray-500 py-2 rounded-lg flex items-center justify-center gap-2 text-sm sm:text-base" (click)="toggleSubscribe()">✉️ Notifícate por correo</button>
+      @if (isSubscribeOpen()) {
+        <form class="w-full bg-white/10 border border-white/20 rounded-lg p-3 space-y-2" (submit)="$event.preventDefault(); sendSubscriptionEmail()">
+          <input type="email" [ngModel]="subscriberEmail()" (ngModelChange)="subscriberEmail.set($event)" name="emailDesktop" placeholder="Tu email" class="w-full px-3 py-2 rounded bg-white/90 text-black placeholder-gray-600" required>
+          <button type="submit" class="w-full bg-yellow-400 text-black py-2 rounded-lg font-semibold hover:opacity-90 text-sm">Enviar</button>
+        </form>
+      }
       <button class="w-full border border-gray-500 py-2 rounded-lg flex items-center justify-center gap-2 text-sm sm:text-base">💬 Únete al Discord</button>
     </div>
   </aside>
@@ -50,7 +56,13 @@
         </div>
 
         <div class="mt-6 w-full space-y-2">
-          <button class="w-full border border-gray-500 py-2 rounded-lg flex items-center justify-center gap-2" (click)="closeMobileNav()">✉️ Notifícate por correo</button>
+          <button class="w-full border border-gray-500 py-2 rounded-lg flex items-center justify-center gap-2" (click)="toggleMobileSubscribe()">✉️ Notifícate por correo</button>
+          @if (isMobileSubscribeOpen()) {
+            <form class="w-full bg-white/10 border border-white/20 rounded-lg p-3 space-y-2" (submit)="$event.preventDefault(); sendSubscriptionEmail()">
+              <input type="email" [ngModel]="subscriberEmail()" (ngModelChange)="subscriberEmail.set($event)" name="emailMobile" placeholder="Tu email" class="w-full px-3 py-2 rounded bg-white/90 text-black placeholder-gray-600" required>
+              <button type="submit" class="w-full bg-yellow-400 text-black py-2 rounded-lg font-semibold hover:opacity-90 text-sm">Enviar</button>
+            </form>
+          }
           <button class="w-full border border-gray-500 py-2 rounded-lg flex items-center justify-center gap-2" (click)="closeMobileNav()">💬 Únete al Discord</button>
         </div>
       </div>
