@@ -1,0 +1,8 @@
+/* CSS opcional para mejorar accesibilidad del overlay */
+.group:focus-within .overlay,
+.group:focus .overlay {
+  opacity: 1;
+}
+
+
+
