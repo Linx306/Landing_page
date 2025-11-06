@@ -21,6 +21,11 @@ export class App {
   protected readonly isSubscribeOpen = signal(false);
   protected readonly isMobileSubscribeOpen = signal(false);
   protected subscriberEmail = signal('');
+  
+  // Estado de notificaciones
+  protected readonly notification = signal<{ message: string; type: 'success' | 'error' | 'warning' } | null>(null);
+  protected readonly isNotificationVisible = signal(false);
+  protected readonly isNotificationClosing = signal(false);
 
   /** Abre/cierra el menú lateral en pantallas móviles. */
   protected toggleMobileNav(): void {
@@ -43,6 +48,32 @@ export class App {
   }
 
   /**
+   * Muestra una notificación con el mensaje y tipo especificados.
+   * La notificación se oculta automáticamente después de 4 segundos.
+   */
+  protected showNotification(message: string, type: 'success' | 'error' | 'warning'): void {
+    this.notification.set({ message, type });
+    this.isNotificationVisible.set(true);
+    
+    // Ocultar automáticamente después de 4 segundos
+    setTimeout(() => {
+      this.hideNotification();
+    }, 4000);
+  }
+
+  /** Oculta la notificación actual con animación. */
+  protected hideNotification(): void {
+    this.isNotificationClosing.set(true);
+    // Ocultar después de la animación
+    setTimeout(() => {
+      this.isNotificationVisible.set(false);
+      this.isNotificationClosing.set(false);
+      // Limpiar el mensaje
+      this.notification.set(null);
+    }, 300);
+  }
+
+  /**
    * Envía el correo de suscripción usando EmailJS.
    * - Valida el formato del email.
    * - Inicializa EmailJS con la clave pública.
@@ -52,7 +83,7 @@ export class App {
     const email = this.subscriberEmail();
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      alert('Por favor ingresa un email válido.');
+      this.showNotification('Por favor ingresa un email válido.', 'warning');
       return;
     }
 
@@ -70,13 +101,13 @@ export class App {
         message: 'Gracias por suscribirte, te mantendremos al tanto de nuevas noticias. Atte. Dev-Inc',
       });
 
-      alert('¡Correo enviado! Revisa tu bandeja.');
+      this.showNotification('¡Correo enviado! Revisa tu bandeja.', 'success');
       this.subscriberEmail.set('');
       this.isSubscribeOpen.set(false);
       this.isMobileSubscribeOpen.set(false);
     } catch (error) {
       console.error('Error enviando correo', error);
-      alert('Hubo un error al enviar el correo. Intenta de nuevo.');
+      this.showNotification('Hubo un error al enviar el correo. Intenta de nuevo.', 'error');
     }
   }
 }

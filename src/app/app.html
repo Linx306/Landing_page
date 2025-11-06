@@ -1,4 +1,35 @@
 <div class="min-h-screen w-full flex flex-col md:flex-row gap-0">
+  <!-- Notificaciones -->
+  @if (notification() && isNotificationVisible()) {
+    <div class="fixed top-4 right-4 left-4 sm:left-auto z-[100] max-w-sm w-auto sm:w-auto" 
+         [class.animate-slide-in]="!isNotificationClosing()"
+         [class.animate-slide-out]="isNotificationClosing()">
+      <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 shadow-2xl flex items-start gap-3"
+           [class.border-green-400]="notification()?.type === 'success'"
+           [class.border-red-400]="notification()?.type === 'error'"
+           [class.border-yellow-400]="notification()?.type === 'warning'">
+        <!-- Icono según el tipo -->
+        <div class="flex-shrink-0 text-2xl">
+          @if (notification()?.type === 'success') {
+            <span class="text-green-400">✓</span>
+          } @else if (notification()?.type === 'error') {
+            <span class="text-red-400">✕</span>
+          } @else {
+            <span class="text-yellow-400">⚠</span>
+          }
+        </div>
+        <!-- Mensaje -->
+        <div class="flex-1">
+          <p class="text-white font-medium text-sm sm:text-base">{{ notification()?.message }}</p>
+        </div>
+        <!-- Botón cerrar -->
+        <button (click)="hideNotification()" class="flex-shrink-0 text-white/60 hover:text-white transition-colors">
+          <span class="text-lg">×</span>
+        </button>
+      </div>
+    </div>
+  }
+
   <!-- Contenido principal -->
   <main class="w-full md:w-4/5 bg-[#2E2B6F] text-white px-4 sm:px-8 md:px-10 py-6 md:py-8">
     <!-- Top bar móvil -->
