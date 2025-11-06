@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import { GalleryComponent } from './gallery.component';
-import { HomeComponent } from './home.component';
+import { GalleryComponent } from './components/gallery.component';
+import { HomeComponent } from './components/home.component';
 
 /**
  * Rutas principales de la aplicación.
