@@ -4,6 +4,13 @@ import { CommonModule } from '@angular/common';
 import { Firestore, collection, collectionData } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
+/**
+ * Componente de galería.
+ * - Lee en tiempo real dos subcolecciones de Firestore:
+ *   - `info/Capturas del Juego/Galeria` para las capturas generales.
+ *   - `info/Capturas del Juego/Personajes` para las clases/personajes.
+ * - Expone `galeria` y `personajes`.
+ */
 @Component({
   selector: 'app-gallery',
   standalone: true,

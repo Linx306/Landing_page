@@ -20,7 +20,7 @@
   animation: float 3s ease-in-out infinite;
 }
 
-/* Evita que encabezados con bg-clip-text se recorten (especialmente en Safari) */
+/* Evita que encabezados con bg-clip-text se recorten */
 .fix-heading-crop {
   -webkit-text-stroke: 0.2px transparent;
 }
