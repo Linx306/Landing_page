@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
-import { GalleryComponent } from './gallery.component';
-import { HomeComponent } from './home.component';
-import { TeamComponent } from './team.component';
+import { GalleryComponent } from './components/gallery.component';
+import { HomeComponent } from './components/home.component';
+import { TeamComponent } from './components/team.component';
 
 /**
  * Rutas principales de la aplicación.
