@@ -1,40 +1,42 @@
-<div class="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-[#2E2B6F] to-[#1a1a3a] text-white">
-  <!-- Area principal de la pagina -->
-  <div class="text-center mb-12 pt-2">
-    <h1 class="text-4xl sm:text-5xl md:text-6xl leading-tight md:leading-[1.15] font-bold mb-6 bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent fix-heading-crop py-2">
+<div class="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-[#2B241C] to-[#15110E] cave-texture text-white">
+  <!-- Hero Section -->
+  <div class="text-center mb-12 pt-2 max-w-5xl mx-auto px-4">
+    <h1 class="text-4xl sm:text-5xl md:text-6xl leading-tight md:leading-[1.15] font-bold mb-6 bg-gradient-to-r from-[#E0C097] to-[#C27C59] bg-clip-text text-transparent fix-heading-crop mx-auto">
       ¡Bienvenido a nuestro juego!
     </h1>
-    <p class="text-base sm:text-lg md:text-xl text-gray-300 mb-8 max-w-2xl">
+    <p class="text-base sm:text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
       Sumérgete en una aventura épica llena de acción, misterio y diversión. 
       Descubre un mundo increíble y vive experiencias únicas.
     </p>
     
     <!-- Area de botones -->
     <div class="flex gap-4 justify-center flex-wrap w-full sm:w-auto">
-      <a routerLink="/galeria" class="bg-gradient-to-r from-green-400 to-blue-500 hover:from-green-500 hover:to-blue-600 text-white font-bold py-3 px-6 md:px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg w-full sm:w-auto text-center">
-        Ver Galería
+      <a routerLink="/galeria" class="btn-stone text-white font-bold px-6 md:px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg w-full sm:w-auto text-center" style="--btn-bg-start:#6B8E4E;--btn-bg-end:#3D5A40;--btn-border:#2a392b;--btn-shadow:#2a392b">
+        🎮 Ver Galería
       </a>
-      <button class="bg-gradient-to-r from-purple-400 to-pink-500 hover:from-purple-500 hover:to-pink-600 text-white font-bold py-3 px-6 md:px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg w-full sm:w-auto">
-        Registrar reserva
+      <button class="btn-stone text-white font-bold px-6 md:px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg w-full sm:w-auto" style="--btn-bg-start:#C4663D;--btn-bg-end:#8B5E3C;--btn-border:#4d2f1f;--btn-shadow:#4d2f1f">
+        🚀 Download Now
       </button>
     </div>
   </div>
 
-  <!-- Area de caracteristicas -->
+  <hr class="bone-divider">
+
+  <!-- Features Section -->
   <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl px-4 md:px-0">
-    <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
+    <div class="card-parchment hover:bg-white/5 transition-all duration-300">
       <div class="text-4xl mb-4">⚔️</div>
       <h3 class="text-xl font-bold mb-3">Combate Épico</h3>
       <p class="text-gray-300">Lucha contra enemigos poderosos con un sistema de combate dinámico y emocionante.</p>
     </div>
     
-    <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
+    <div class="card-parchment hover:bg-white/5 transition-all duration-300">
       <div class="text-4xl mb-4">🗺️</div>
       <h3 class="text-xl font-bold mb-3">Mundos Inmersivos</h3>
       <p class="text-gray-300">Explora vastos mundos llenos de secretos, tesoros y aventuras por descubrir.</p>
     </div>
     
-    <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
+    <div class="card-parchment hover:bg-white/5 transition-all duration-300">
       <div class="text-4xl mb-4">📖</div>
       <h3 class="text-xl font-bold mb-3">Historia Compleja</h3>
       <p class="text-gray-300">Descubre una historia interesante y llena de misterio.</p>
@@ -44,19 +46,19 @@
   <!-- Area de estadisticas -->
   <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center px-4 md:px-0">
     <div>
-      <div class="text-3xl font-bold text-yellow-400">1M+</div>
+      <div class="text-3xl font-bold text-[#E0C097]">1M+</div>
       <div class="text-gray-400">Reservas</div>
     </div>
     <div>
-      <div class="text-3xl font-bold text-green-400">50+</div>
+      <div class="text-3xl font-bold text-[#A3B18A]">50+</div>
       <div class="text-gray-400">Mapas por explorar</div>
     </div>
     <div>
-      <div class="text-3xl font-bold text-blue-400">100+</div>
+      <div class="text-3xl font-bold text-[#C08457]">100+</div>
       <div class="text-gray-400">Armas Diferentes</div>
     </div>
     <div>
-      <div class="text-3xl font-bold text-purple-400">24/7</div>
+      <div class="text-3xl font-bold text-[#C2B280]">24/7</div>
       <div class="text-gray-400">Soporte</div>
     </div>
   </div>

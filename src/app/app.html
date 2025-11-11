@@ -31,7 +31,7 @@
   }
 
   <!-- Contenido principal -->
-  <main class="w-full md:w-4/5 bg-[#2E2B6F] text-white px-4 sm:px-8 md:px-10 py-6 md:py-8">
+  <main class="w-full md:w-4/5 bg-[#2B241C] cave-texture text-white px-4 sm:px-8 md:px-10 py-6 md:py-8">
     <!-- Top bar móvil -->
     <nav class="mb-6 flex items-center justify-between md:hidden">
       <h2 class="text-xl font-bold">Dev-Inc</h2>
@@ -47,25 +47,20 @@
   </main>
 
   <!-- Panel lateral derecho (desktop) -->
-  <aside class="desktop-aside bg-gray-800 text-white flex-col items-center py-6 md:py-8 space-y-4 md:space-y-6">
-    <img src="/assets/Logo.png" alt="Dev-Inc logo" class="w-24 h-24 rounded-full object-cover mb-2">
+  <aside class="desktop-aside bg-[#2C241D] text-white flex-col items-center py-6 md:py-8 space-y-4 md:space-y-6">
     <h1 class="text-4xl font-bold">Dev-Inc</h1>
+    <p class="text-gray-400 text-lg">Logo aquí</p>
+    <div class="torch"><span class="flame">🔥</span><span>Campamento</span></div>
 
     <div class="space-y-3 w-11/12 sm:w-3/4">
-      <button class="w-full bg-blue-400 text-black py-2 rounded-lg font-semibold hover:opacity-90 text-sm sm:text-base">📰 Noticias</button>
-      <a routerLink="/galeria" class="w-full block text-center bg-green-300 text-black py-2 rounded-lg font-semibold hover:opacity-90 text-sm sm:text-base">🎮 Galería</a>
-      <a routerLink="/equipo" class="w-full block text-center bg-orange-300 text-black py-2 rounded-lg font-semibold hover:opacity-90 text-sm sm:text-base">👥 Equipo</a>
+      <button class="w-full bg-[#D2B48C] text-black py-2 rounded-lg font-semibold hover:opacity-90 text-sm sm:text-base">📰 Noticias</button>
+      <a routerLink="/galeria" class="w-full block text-center bg-[#A3B18A] text-black py-2 rounded-lg font-semibold hover:opacity-90 text-sm sm:text-base">🎮 Galería</a>
+      <button class="w-full bg-[#C08457] text-black py-2 rounded-lg font-semibold hover:opacity-90 text-sm sm:text-base">👥 Equipo</button>
     </div>
 
     <div class="mt-10 w-11/12 sm:w-3/4 space-y-2">
-      <button class="w-full border border-gray-500 py-2 rounded-lg flex items-center justify-center gap-2 text-sm sm:text-base" (click)="toggleSubscribe()">✉️ Notifícate por correo</button>
-      @if (isSubscribeOpen()) {
-        <form class="w-full bg-white/10 border border-white/20 rounded-lg p-3 space-y-2" (submit)="$event.preventDefault(); sendSubscriptionEmail()">
-          <input type="email" [ngModel]="subscriberEmail()" (ngModelChange)="subscriberEmail.set($event)" name="emailDesktop" placeholder="Tu email" class="w-full px-3 py-2 rounded bg-white/90 text-black placeholder-gray-600" required>
-          <button type="submit" class="w-full bg-yellow-400 text-black py-2 rounded-lg font-semibold hover:opacity-90 text-sm">Enviar</button>
-        </form>
-      }
-      <button class="w-full border border-gray-500 py-2 rounded-lg flex items-center justify-center gap-2 text-sm sm:text-base">💬 Únete al Discord</button>
+      <button class="w-full border border-[#6B5B53] py-2 rounded-lg flex items-center justify-center gap-2 text-sm sm:text-base">✉️ Notifícate por correo</button>
+      <button class="w-full border border-[#6B5B53] py-2 rounded-lg flex items-center justify-center gap-2 text-sm sm:text-base">💬 Únete al Discord</button>
     </div>
   </aside>
 
@@ -73,7 +68,7 @@
   @if (isMobileNavOpen()) {
     <div class="fixed inset-0 z-50 md:hidden">
       <div class="absolute inset-0 bg-black/50" (click)="closeMobileNav()"></div>
-      <div class="absolute right-0 top-0 h-full w-72 sm:w-80 bg-gray-800 text-white p-6 flex flex-col items-center space-y-6">
+      <div class="absolute right-0 top-0 h-full w-72 sm:w-80 bg-[#2C241D] text-white p-6 flex flex-col items-center space-y-6">
         <div class="w-full flex items-center justify-between">
           <div class="flex items-center gap-2">
             <img src="/assets/Logo.png" alt="Logo Dev-Inc" class="w-10 h-10 rounded-full object-cover">
@@ -83,20 +78,14 @@
         </div>
 
         <div class="space-y-3 w-full">
-          <button class="w-full bg-blue-400 text-black py-2 rounded-lg font-semibold hover:opacity-90" (click)="closeMobileNav()">📰 Noticias</button>
-          <a routerLink="/galeria" class="w-full block text-center bg-green-300 text-black py-2 rounded-lg font-semibold hover:opacity-90" (click)="closeMobileNav()">🎮 Galería</a>
-          <button class="w-full bg-orange-300 text-black py-2 rounded-lg font-semibold hover:opacity-90" (click)="closeMobileNav()">👥 Equipo</button>
+          <button class="w-full bg-[#D2B48C] text-black py-2 rounded-lg font-semibold hover:opacity-90" (click)="closeMobileNav()">📰 Noticias</button>
+          <a routerLink="/galeria" class="w-full block text-center bg-[#A3B18A] text-black py-2 rounded-lg font-semibold hover:opacity-90" (click)="closeMobileNav()">🎮 Galería</a>
+          <button class="w-full bg-[#C08457] text-black py-2 rounded-lg font-semibold hover:opacity-90" (click)="closeMobileNav()">👥 Equipo</button>
         </div>
 
         <div class="mt-6 w-full space-y-2">
-          <button class="w-full border border-gray-500 py-2 rounded-lg flex items-center justify-center gap-2" (click)="toggleMobileSubscribe()">✉️ Notifícate por correo</button>
-          @if (isMobileSubscribeOpen()) {
-            <form class="w-full bg-white/10 border border-white/20 rounded-lg p-3 space-y-2" (submit)="$event.preventDefault(); sendSubscriptionEmail()">
-              <input type="email" [ngModel]="subscriberEmail()" (ngModelChange)="subscriberEmail.set($event)" name="emailMobile" placeholder="Tu email" class="w-full px-3 py-2 rounded bg-white/90 text-black placeholder-gray-600" required>
-              <button type="submit" class="w-full bg-yellow-400 text-black py-2 rounded-lg font-semibold hover:opacity-90 text-sm">Enviar</button>
-            </form>
-          }
-          <button class="w-full border border-gray-500 py-2 rounded-lg flex items-center justify-center gap-2" (click)="closeMobileNav()">💬 Únete al Discord</button>
+          <button class="w-full border border-[#6B5B53] py-2 rounded-lg flex items-center justify-center gap-2" (click)="closeMobileNav()">✉️ Notifícate por correo</button>
+          <button class="w-full border border-[#6B5B53] py-2 rounded-lg flex items-center justify-center gap-2" (click)="closeMobileNav()">💬 Únete al Discord</button>
         </div>
       </div>
     </div>
