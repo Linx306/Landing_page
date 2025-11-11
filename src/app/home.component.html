@@ -1,40 +1,42 @@
-<div class="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-[#2B241C] to-[#15110E] text-white">
+<div class="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-[#2B241C] to-[#15110E] cave-texture text-white">
   <!-- Hero Section -->
-  <div class="text-center mb-12 pt-2">
-    <h1 class="text-4xl sm:text-5xl md:text-6xl leading-tight md:leading-[1.15] font-bold mb-6 bg-gradient-to-r from-[#E0C097] to-[#C27C59] bg-clip-text text-transparent fix-heading-crop">
+  <div class="text-center mb-12 pt-2 max-w-5xl mx-auto px-4">
+    <h1 class="text-4xl sm:text-5xl md:text-6xl leading-tight md:leading-[1.15] font-bold mb-6 bg-gradient-to-r from-[#E0C097] to-[#C27C59] bg-clip-text text-transparent fix-heading-crop mx-auto">
       ¡Bienvenido a nuestro juego!
     </h1>
-    <p class="text-base sm:text-lg md:text-xl text-gray-300 mb-8 max-w-2xl">
+    <p class="text-base sm:text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
       Sumérgete en una aventura épica llena de acción, misterio y diversión. 
       Descubre un mundo increíble y vive experiencias únicas.
     </p>
     
     <!-- Call to Action Buttons -->
     <div class="flex gap-4 justify-center flex-wrap w-full sm:w-auto">
-      <a routerLink="/galeria" class="bg-gradient-to-r from-[#6B8E4E] to-[#3D5A40] hover:from-[#7FA062] hover:to-[#466A52] text-white font-bold py-3 px-6 md:px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg w-full sm:w-auto text-center">
+      <a routerLink="/galeria" class="btn-stone text-white font-bold px-6 md:px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg w-full sm:w-auto text-center" style="--btn-bg-start:#6B8E4E;--btn-bg-end:#3D5A40;--btn-border:#2a392b;--btn-shadow:#2a392b">
         🎮 Ver Galería
       </a>
-      <button class="bg-gradient-to-r from-[#C4663D] to-[#8B5E3C] hover:from-[#D17348] hover:to-[#704A30] text-white font-bold py-3 px-6 md:px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg w-full sm:w-auto">
+      <button class="btn-stone text-white font-bold px-6 md:px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg w-full sm:w-auto" style="--btn-bg-start:#C4663D;--btn-bg-end:#8B5E3C;--btn-border:#4d2f1f;--btn-shadow:#4d2f1f">
         🚀 Download Now
       </button>
     </div>
   </div>
 
+  <hr class="bone-divider">
+
   <!-- Features Section -->
   <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl px-4 md:px-0">
-    <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
+    <div class="card-parchment hover:bg-white/5 transition-all duration-300">
       <div class="text-4xl mb-4">⚔️</div>
       <h3 class="text-xl font-bold mb-3">Combate Épico</h3>
       <p class="text-gray-300">Lucha contra enemigos poderosos con un sistema de combate dinámico y emocionante.</p>
     </div>
     
-    <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
+    <div class="card-parchment hover:bg-white/5 transition-all duration-300">
       <div class="text-4xl mb-4">🗺️</div>
       <h3 class="text-xl font-bold mb-3">Mundos Inmersivos</h3>
       <p class="text-gray-300">Explora vastos mundos llenos de secretos, tesoros y aventuras por descubrir.</p>
     </div>
     
-    <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
+    <div class="card-parchment hover:bg-white/5 transition-all duration-300">
       <div class="text-4xl mb-4">📖</div>
       <h3 class="text-xl font-bold mb-3">Historia Compleja</h3>
       <p class="text-gray-300">Descubre una historia interesante y llena de misterio.</p>
