@@ -1,7 +1,7 @@
-<div class="min-h-screen bg-gradient-to-br from-[#2E2B6F] to-[#1a1a3a] text-white p-4 sm:p-6 md:p-8">
+<div class="min-h-screen bg-gradient-to-br from-[#1A120F] to-[#221612] text-white p-4 sm:p-6 md:p-8">
   <!-- Header -->
   <div class="text-center mb-12">
-    <h1 class="text-4xl sm:text-5xl md:text-6xl leading-tight md:leading-[1.15] font-bold mb-6 bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent fix-heading-crop py-2">
+    <h1 class="text-4xl sm:text-5xl md:text-6xl leading-tight md:leading-[1.15] font-bold mb-6 bg-gradient-to-r from-[#C27C59] to-[#9A3D2C] bg-clip-text text-transparent fix-heading-crop py-2">
       🎮 Galería del Juego
     </h1>
     <p class="text-base sm:text-lg md:text-xl text-gray-300 mb-8">Los intrigantes escenarios y clases de nuestro juego</p>
@@ -16,7 +16,7 @@
   <section class="mb-16">
     <h2 class="text-3xl font-bold mb-8 text-center">📸 Capturas del Juego</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-      <div *ngFor="let item of galeria$ | async" class="group relative overflow-hidden rounded-xl border-2 border-yellow-400 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+      <div *ngFor="let item of galeria$ | async" class="group relative overflow-hidden rounded-xl border-2 border-[#9A3D2C] shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
         <img [src]="item.Imagen" [alt]="item.nombre" class="block w-full h-48 sm:h-56 md:h-64 object-cover">
         <div class="overlay absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-6">
           <div class="text-center">
