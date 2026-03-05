@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      - Dev
+      - develop
 
   pull_request:
     branches:
@@ -23,18 +23,18 @@ jobs:
       - name: Instalar Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
 
       - name: Instalar dependencias
         run: npm install
 
       - name: Compilar proyecto Angular
-        run: npm run build --if-present
+        run: npm run build
 
-      - name: Ejecutar pruebas unitarias
+      - name: Ejecutar pruebas
         run: npm run test -- --watch=false --browsers=ChromeHeadless
 
-      - name: Guardar artefacto compilado
+      - name: Subir artefacto
         uses: actions/upload-artifact@v4
         with:
           name: landing-page-build
